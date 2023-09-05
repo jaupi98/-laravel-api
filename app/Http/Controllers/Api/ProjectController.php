@@ -14,8 +14,8 @@ class ProjectController extends Controller
         // $projects = Project::all();
         // $projects = Project::with('type', 'technologies')->get(); EAGER LOADING SENZA PAGINAZIONE
         
-        // $projects = Project::with('type', 'technologies')->paginate(2); // EAGER LOADING CON PAGINAZIONE
-        $projects = Project::all();
+        $projects = Project::with('type', 'technologies')->paginate(2); 
+        // $projects = Project::all();
         return response()->json([
             'success' => true,
             'results' => $projects
